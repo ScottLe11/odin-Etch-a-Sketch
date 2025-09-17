@@ -1,11 +1,26 @@
 #container{
     display:flex;
-    
+    flex-direction:column;
+    height: 100vh;
+    width: 100%;
+    border: 1px solid black;
     /* justify-content: space-between; */
     
 }
 
-#container div{
+.line{
+    display:flex;
+    flex:1;
+    border: 1px solid red;
+}
+
+
+.line div{
+    flex:1;
+    border: 1px solid blue;
+}
+
+/* #container div{
     flex:1;
     border: 4px solid black;
-}
+} */
