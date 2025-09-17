@@ -1,5 +1,5 @@
 const container = document.querySelector("#container");
-const square = 4
+const square = 16
 
 for (let i = 0; i < square; ++i){
     const outer = document.createElement("div");
@@ -13,3 +13,10 @@ for (let i = 0; i < square; ++i){
     }
     container.appendChild(outer);
 }
+
+const allBoxes = document.querySelectorAll(".boxes");
+allBoxes.forEach(box => {
+    box.addEventListener("mouseover",() =>{
+        box.style.background = "black";
+    });
+});
