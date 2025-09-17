@@ -2,6 +2,7 @@
 const button = document.querySelector("#newEtch");
 button.addEventListener("click", ()=>{
     let input = prompt("Enter amount of width and height blocks (Max: 100)");
+    
     // const deleteAllBoxes = document.querySelectorAll(".boxes");
     // deleteAllBoxes.forEach( box => {
     //     box.remove();
@@ -14,8 +15,15 @@ button.addEventListener("click", ()=>{
 });
 
 
+function randomColor(){
+    const r = Math.floor(Math.random() * (255 - 0 + 1));
+    const g = Math.floor(Math.random() * (255 - 0 + 1));
+    const b = Math.floor(Math.random() * (255 - 0 + 1));
+    return [r,g,b];
+}
 
 function createEtch(square){
+    if (square > 100) square = 100;
     for (let i = 0; i < square; ++i){
         const outer = document.createElement("div");
         outer.className = "line";
@@ -32,7 +40,8 @@ function createEtch(square){
     const allBoxes = document.querySelectorAll(".boxes");
     allBoxes.forEach(box => {
         box.addEventListener("mouseover",() =>{
-            box.style.background = "black";
+            const [r,g,b] = randomColor();
+            box.style.background = `rgb(${r}, ${g}, ${b})`;
         });
     });
 
