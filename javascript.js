@@ -30,7 +30,7 @@ function createEtch(square){
         for (let k = 0; k < square; ++k){
             const div = document.createElement("div");
             div.className = "boxes";
-            div.textContent = i * square + k;
+            //div.textContent = i * square + k;
             div.setAttribute("style","border-color: black;");
             outer.appendChild(div);
         }
